@@ -3,18 +3,11 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use("Schema");
 
-class InviteSchema extends Schema {
+class ProjectSchema extends Schema {
   up() {
-    this.create("invites", table => {
+    this.create("projects", table => {
       table.increments();
-      table
-        .integer("user_id")
-        .unsigned()
-        .notNullable()
-        .references("id")
-        .inTable("users")
-        .onUpdate("CASCADE")
-        .onDelete("CASCADE");
+      table.string("title").notNullable();
       table
         .integer("team_id")
         .unsigned()
@@ -23,14 +16,13 @@ class InviteSchema extends Schema {
         .inTable("teams")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
-      table.string("email").notNullable();
       table.timestamps();
     });
   }
 
   down() {
-    this.drop("invites");
+    this.drop("projects");
   }
 }
 
-module.exports = InviteSchema;
+module.exports = ProjectSchema;
