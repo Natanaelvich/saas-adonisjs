@@ -1,24 +1,24 @@
-"use strict";
+'use strict'
 
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
-const Model = use("Model");
+const Model = use('Model')
 
 class Team extends Model {
-  static boot() {
-    super.boot();
+  static boot () {
+    super.boot()
 
-    this.addTrait("@provider:Lucid/Slugify", {
+    this.addTrait('@provider:Lucid/Slugify', {
       fields: {
-        slug: "name"
+        slug: 'name'
       },
-      strategy: "dbIncrement",
+      strategy: 'dbIncrement',
       disableUpdates: false
-    });
+    })
   }
 
-  user() {
-    this.belongsToMany("App/Models/User").pivotModel("App/Models/UserTeam");
+  user () {
+    this.belongsToMany('App/Models/User').pivotModel('App/Models/UserTeam')
   }
 }
 
-module.exports = Team;
+module.exports = Team
