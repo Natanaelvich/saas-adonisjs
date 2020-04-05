@@ -16,6 +16,14 @@ class Team extends Model {
     })
   }
 
+  roles () {
+    return this.belongsToMany('Adonis/Acl/Role')
+  }
+
+  permission () {
+    return this.belongsToMany('Adonis/Acl/Permission')
+  }
+
   user () {
     return this.belongsToMany('App/Models/User').pivotModel('App/Models/UserTeam')
   }
