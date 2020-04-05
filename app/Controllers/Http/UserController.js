@@ -5,12 +5,22 @@ const Invite = use('App/Models/Invite')
 
 class UserController {
   async store ({ request, response, auth }) {
-    const temasQuery = Invite.query().where('email', email)
+    const data = request.only(['name', 'email', 'password'])
+    const temasQuery = Invite.query().where('email', data.email)
     const teams = await temasQuery.pluck('team_id')
 
     if (teams.length === 0) {
       return response.status(401).send({ message: 'You´re not invited to any team' })
     }
+
+    const user = await User.create(data)
+    await user.teams().attach(teams)
+
+    await temasQuery.delete()
+
+    const token = await auth.attempt(data.email, data.password)
+
+    return token
   }
 }
 

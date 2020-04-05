@@ -17,7 +17,11 @@ class Team extends Model {
   }
 
   user () {
-    this.belongsToMany('App/Models/User').pivotModel('App/Models/UserTeam')
+    return this.belongsToMany('App/Models/User').pivotModel('App/Models/UserTeam')
+  }
+
+  projects () {
+    return this.hasMany('App/Models/Project')
   }
 }
 
