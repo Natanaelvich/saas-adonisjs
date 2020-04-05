@@ -1,16 +1,22 @@
-"use strict";
+'use strict'
 
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
-const Model = use("Model");
+const Model = use('Model')
 
 class Invite extends Model {
-  user() {
-    return this.belongsTo("App/Models?User");
+  static boot () {
+    super.boot()
+
+    this.addHook('afterCreate', 'InviteHook.sendInvitationEMail')
   }
 
-  Team() {
-    return this.belongsTo("App/Models?Team");
+  user () {
+    return this.belongsTo('App/Models/User')
+  }
+
+  team () {
+    return this.belongsTo('App/Models/Team')
   }
 }
 
-module.exports = Invite;
+module.exports = Invite
