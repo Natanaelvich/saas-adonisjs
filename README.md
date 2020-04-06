@@ -1,8 +1,5 @@
 <h1 align="center">Welcome to saas 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/saas" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/saas.svg">
-  </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -38,11 +35,8 @@ yarn run test
 * Website: facebook.com/natanael.lima.99
 * Twitter: [@natanaelvich](https://twitter.com/natanaelvich)
 * Github: [@natanaelvich](https://github.com/natanaelvich)
-* LinkedIn: [@natanaelvich](https://linkedin.com/in/natanaelvich)
+* LinkedIn: [@natanael-lima-2618b418b](https://linkedin.com/in/natanael-lima-2618b418b)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
