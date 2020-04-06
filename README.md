@@ -11,10 +11,30 @@
 > manager teams projects
 
 ## Install
+- install adonis
+
+ ```sh
+npm i -g @adonisjs/cli
+```
+
+- intall depedencies
 
 ```sh
 yarn intall
 ```
+
+- execute migrattions
+
+```sh
+adonis migrations:run
+```
+
+- execute seeders
+
+```sh
+adonis seed
+```
+
 
 ## Usage
 
